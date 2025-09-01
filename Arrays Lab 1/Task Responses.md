@@ -1,3 +1,5 @@
+[Video Link](https://youtu.be/LCuI1Jfgrhg)
+
 **1. Explain how to create an array of 100 elements.**
 
 An array of 100 ints can be created by typing:
