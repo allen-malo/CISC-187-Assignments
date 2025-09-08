@@ -56,8 +56,9 @@ int main()
     int arr[] = {2, 4, 6, 8, 10, 12, 13};
     int arrSize = sizeof(arr) / sizeof(int);
 
-    linearSearch(arr, arrSize, 13);
-    binarySearch(arr, arrSize, 13);
+    linearSearch(arr, arrSize, 8);
+    binarySearch(arr, arrSize, 8);
 }
+
 
 
