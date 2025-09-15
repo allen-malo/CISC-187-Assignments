@@ -1,3 +1,5 @@
+[Video Link](https://youtu.be/akyxCLAxH0A)
+
 **1. Use Big O Notation to describe the time complexity of an algorithm that takes $4N + 16 steps$.**
 
 The time complexity of an algorithm that takes $4N + 16 steps$ in Big O Notation is just $O(N)$. An important thing to note about Big O Notation is that it ignores constants and numbers that aren't exponents. So for $4N + 16$, 4 and 16 are ignored because they are both numbers/constants that aren't exponents.
@@ -12,7 +14,7 @@ This algorithm is going to take $2N$ steps. It will take $N$ steps to double all
 
 **4. Use Big O Notation to describe the time complexity of the following function, which accepts an array of strings and prints each string in multiple cases**
 
-Similar to the last function, this function is iterating over the entire array, which takes $N$ steps to do. At each step, we are printing the string in uppercase, lowercase, and capitalized, which is 6 additional steps for every step (1 step for changing the string casing, and another step for printing the string). That means this function will take $6N$ steps to complete, which is described as $O(N)$ in Big O Notation.
+Similar to the last function, this function is iterating over the entire array, which takes $N$ steps to do. At each step, we are printing the string in uppercase, lowercase, and capitalized, which is 3 additional steps for every step. That means this function will take $6N$ steps to complete, which is described as $O(N)$ in Big O Notation.
 
 **5. The next function iterates over an array of numbers, and for each number whose index is even, it prints the sum of that number plus every number in the array. What is this function's efficiency in terms of Big O Notation?**
 
