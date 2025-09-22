@@ -1,4 +1,4 @@
-
+[Video Link](https://youtu.be/D2q7eV3q7Tk)
 
 **1. Proof that, under the average-case scenario, the insertion sort has a time complexity of _O(N<sup>2</sup>)_. Draw a clear figure and show all the operations clearly**
 
