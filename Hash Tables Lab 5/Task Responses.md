@@ -1,4 +1,4 @@
-
+[Video Link](https://youtu.be/FYf-JEIe0JA)
 
 **1. Assume you have a simple single-dimensional array. Linear search will take _O(N)_. Write a code in C++/Python to improve the search operation efficiency from _O(N)_ to _O(1)_.**
 
@@ -8,7 +8,7 @@ Now that we have our data in an unordered map, we can use the "find" method to s
 
 **2. Use C++ to generate a hash value of your name.**
 
-To generate the hash value of my name, "Allen", we're going to need the ```std::hash``` template class. We can get this by using the ```#include <functional>``` header. Once we do this, we can create a hasher for string objects, and then get our hash value by calling the operator of the hasher object and passing in our string variable.
+To generate the hash value of my name, "Allen", we're going to need the ```std::hash``` template class. We can get this by using the ```#include <functional>``` header. Once we do this, we can create a hasher for string objects, and then get our hash value by calling the operator of the hasher object and passing in our string variable. The hash value is returned as a ```std::size_t``` object, which is an unsigned integer.
 
 **3. With the help of a figure, explain the problem that occured due to introducing a tombstone to mark the deleted cell.**
 
