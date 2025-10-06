@@ -1,3 +1,5 @@
+[Video Link](https://youtu.be/cJOBS_uw0w8)
+
 **1. Use Figure 17 as a model to illustrate the result of each operation in the sequence PUSH(S, 4), PUSH(S, 1), PUSH(S, 3), POP(S), PUSH(S, 8), POP(S) on an initially empty stack S stored in array S[1..6].**
 
 For this example, we are starting with an empty stack that can contain 6 elements. The important thing to note here is that the stack data structure is LIFO (Last in, First out), so whatever elements are added more recently will be able to be accessed sooner. A better way to picture this is like a stack of plates. In order to get to the bottom plate (without breaking the others), you have to remove the plate on top first to get closer and closer to the bottom plate.
