@@ -1,3 +1,4 @@
+[Video Link](https://youtu.be/10d4-z1tCQ0)
 
 **Task: Create a linked list in C++, add nodes and delete nodes at the start of the list.**
 
