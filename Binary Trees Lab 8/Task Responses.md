@@ -4,15 +4,15 @@ Before we start going over what this structure is going to look like when we add
 
 When we add an element to a binary search tree, elements with a lesser value than the value in their parent node are stored to the left, and greater values are stored to the right. So, when we add the first element in the array (1), this will be our root node. From this point on, any elements we add that are greater will go to the right, and lesser ones will go to the left. The structure will now go as follows:
 
-Add 1 -> root
-Add 5 -> right of root
-Add 9 -> right of root -> right of 5
-Add 2 -> right of root -> left of 5
-Add 4 -> right of root -> left of 5 -> right of 2
-Add 10 -> right of root -> right of 5 -> right of 9
-Add 6 -> right of root -> right of 5 -> left of 9
-Add 3 -> right of root -> left of 5 -> right of 2 -> left of 4
-Add 8 -> right of root -> right of 5 -> left of 9 -> right of 6
+Add 1 -> root<br>
+Add 5 -> right of root<br>
+Add 9 -> right of root -> right of 5<br>
+Add 2 -> right of root -> left of 5<br>
+Add 4 -> right of root -> left of 5 -> right of 2<br>
+Add 10 -> right of root -> right of 5 -> right of 9<br>
+Add 6 -> right of root -> right of 5 -> left of 9<br>
+Add 3 -> right of root -> left of 5 -> right of 2 -> left of 4<br>
+Add 8 -> right of root -> right of 5 -> left of 9 -> right of 6<br>
 
 **2, If a well-balanced binary search tree contains 1000 values, what is the maximum number of steps it would take to search for a value within it?**
 
