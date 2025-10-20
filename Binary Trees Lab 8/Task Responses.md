@@ -1,3 +1,5 @@
+[Video Link](https://youtu.be/sZ03xnpX1yE)
+
 **1. Imagine you were to take an empty binary search tree and insert the following sequence of numbers in this order: [1, 5, 9, 2, 4, 10, 6, 3, 8]. Draw a diagram showing what the binary search tree would look like. Remember, the numbers are being inserted in the order presented here.**
 
 Before we start going over what this structure is going to look like when we add these integers to the binary search tree in this order, we need to understand how adding an element to a binary search tree works. 
@@ -14,7 +16,7 @@ Add 6 -> right of root -> right of 5 -> left of 9<br>
 Add 3 -> right of root -> left of 5 -> right of 2 -> left of 4<br>
 Add 8 -> right of root -> right of 5 -> left of 9 -> right of 6<br>
 
-**2, If a well-balanced binary search tree contains 1000 values, what is the maximum number of steps it would take to search for a value within it?**
+**2. If a well-balanced binary search tree contains 1000 values, what is the maximum number of steps it would take to search for a value within it?**
 
 In order to find the maximum number of steps it would take to find a value in a binary search tree with 1000 elements, we'll have to determine the height of this binary search tree. The height of a binary search tree is the number of edges on the longest path from the root node to a leaf node. The height of a binary search tree can be found with the following formula: _ceil(log<sub>2</sub>(N + 1))_, where _N_ is the number of nodes in the tree. If we evaluate _ceil(log<sub>2</sub>(1000 + 1))_, it comes out to a height of 10. Therefore, the maximum number of steps it will take to search for a value in a well-balanced binary search tree of 1000 elements is 10 steps.
 
