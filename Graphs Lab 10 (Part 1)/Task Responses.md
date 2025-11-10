@@ -1,4 +1,6 @@
 
+[Video Link](https://youtu.be/KW1U7MCcbfQ)
+
 **1. Create a theoretical graph using a pen and paper OR electronically.**
 
 <img width="989" height="733" alt="GraphLab10" src="https://github.com/user-attachments/assets/278087c4-3df1-436e-8b94-de4927a0e1a5" />
