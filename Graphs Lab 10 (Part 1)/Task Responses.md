@@ -15,11 +15,13 @@ Level 0: <br>
 - Start at starting vertex (0 in this case).
 - Add 0 to queue and result
 - Visit vertex 0 and remove from queue
+
 Level 1: <br>
 - Get neighbors from 0 (in this case, 1 and 4).
 - Add neighbors to queue.
 - Visit vertex 1 and 4 (vertex 1 will be visited first since it is higher in the queue) and add to result.
 - Remove vertex 1 and 4 from the queue.
+
 Level 2: <br>
 - Get unvisited neighbors from 1 (in this case, 2 and 3).
 - Visit vertex 2 and 3 + remove them from the queue.
@@ -38,6 +40,7 @@ Path 1: <br>
 - Visit 2
 - Go to neighbor (only available neighbor here is 3)
 - Visit 3 (No more neighbors to visit, so we'll backtrack)
+
 Backtrack (from 3):
 - Move back to 2 (no more unvisited neighbors)
 - Move back to 1 (no more unvisited neighbors)
