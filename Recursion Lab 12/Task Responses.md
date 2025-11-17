@@ -1,4 +1,6 @@
 
+[Video Link](https://youtu.be/Vaw_KqFMfd4)
+
 **1. The following function prints every other number from a low number to a high number. For example, if low is 0 and high is 10, it would print:** ```0, 2, 4, 6, 8, 10```**. Identify the base case in the function**
 
 ```
