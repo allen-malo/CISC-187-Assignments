@@ -1,4 +1,4 @@
-
+[Video Link](https://youtu.be/8n0FXnNkINM)
 
 **1. Following the the 'Word Builder' algorithm. Describe its space complexity in terms of Big O:**
 ```
@@ -15,7 +15,11 @@ function wordBuilder(array) {
 }
 ```
 
-The space complexity of the 'Word Builder' algorithm is _O(N<sup>2</sup>)_, where _N_ is the array size. We are iterating over the entire array, and for each position except its own, we push the sum of the elements to the stack. This gives us a space complexity of N<sup>2</sup>, since we are creating N<sup>2</sup> combinations.
+Before we go over the space complexity of this function, let's go over what space complexity is, and what it means.
+
+Space complexity is a measure of how much memory an algorithm needs to run, relative to its output. Computers do not have infinite memory (some have very little), so we need a way to measure how much memory algorithms can use. Similarly to time complexity, it is measure in Big O Notation. Having a lower space complexity is better, and sometimes it can come with tradeoffs (such as a slower time complexity). This would be useful for hardware that doesn't have a lot of memory to work with.
+
+The space complexity of the 'Word Builder' algorithm is _O(N<sup>2</sup>)_, where _N_ is the array size. We are iterating over the entire array, and for each position except its own, we push the sum of the elements to the stack. We'll have a total of _N(N-1)_ combinations, which simplifies to _N<sup>2</sup>_ in Big O Notation (Since we ignore constants and lower degree terms). This gives us a space complexity of N<sup>2</sup>, since we are creating N<sup>2</sup> combinations.
 
 **2. Following is a function that reverses an array. Describe its space complexity in terms of Big O:**
 ```
