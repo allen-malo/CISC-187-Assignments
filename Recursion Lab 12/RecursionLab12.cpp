@@ -63,14 +63,16 @@ void recursive_function(const vector<NestedArray>& main_array, size_t index)
 
 int main()
 {
+    cout << "Task 1:" << endl;
     printEveryOther(0, 10);
+    cout << endl;
 
     int task2 = factorial(10);
     cout << "Task 2: " << endl;
     cout << task2 << endl << endl;
 
     int task3 = sum(1, 10);
-    cout << "Task 3" << endl;
+    cout << "Task 3:" << endl;
     cout << task3 << endl << endl;
 
     vector<NestedArray> array = {
@@ -108,6 +110,6 @@ int main()
     };
 
 
-    cout << "Task 4" << endl;
+    cout << "Task 4:" << endl;
     recursive_function(array, 0);
 }
