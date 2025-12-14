@@ -62,5 +62,70 @@ HOWEVER, there is some slight ambiguity here. The Task NEVER states whether a tr
 
 If there are more than 2 elements, then we'll use a for-loop to loop through the array, starting at the third index. We'll get the profit for selling on that day by using the difference between the current day price and the smallest price found. If this day gives a profit greater than the previous greatest profit, then we'll update the max profit to reflect this. Otherwise, we'll check to see if the profit for this transaction is negative. If this is true, then we've found a potentially better day to invest. This step would give a time complexity of O(N), since we are iterating through the entire array once.
 
-After iterating through the array is complete, we return the max profit found.
+After iterating through the array is complete, we return the max profit found. The total time complexity would be O(N).
 
+**4. You're writing a function that accepts an array of numbers and computes the highest product of any two numbers in the array. At first glance, this is easy, as we can just find the two greatest numbers and multiply them. However, our array can contain negative numbers and look like this:**
+```
+[5, -10, -6, 9, 4]
+```
+**Would could use the nested loops approach to multiply every possible pair of numbers, but this would take O(N<sup>2</sup>) time. Your job is to optimize the function so that it's a speedy O(N).**
+
+The first step is to, of course, check if the array is empty. If this is true, then we'll return 0. If the array contains only 1 element, then we'll return that one element.
+
+Since we want a time complexity of O(N), and know that negative numbers are possible to find in a given array, we first need to find the smallest and largest values in the array. I've chosen to create structs for tracking the smallest and largest number, as well as their index in the array. We keep track of the position of the given number in the array because when we go to multiply this number by every number in the array to find the largest product, we DO NOT want to multiply this number by the number at the same position in the array (that would be itself). The reason for this check is because if we wanted to have duplicate numbers at different positions in the array, this allows us to do that. In total, this step gives a time complexity of O(N), since we loop through the array once.
+
+After, we'll create an int variable that stores the largest product found, initializing it to be the smallest possible integer value. you could also initialize the smallest product to be 0, but keep in mind the only time you'd be getting a negative product is if there are only two elements in the array, where one is positive and the other is negative. For checking the products with the smallest and largest numbers, we'll use two different for-loops that iterate through the rest of the array, giving a time complexity of O(N) since we loop through the array twice, and constants are ignored.
+
+The process for both iterations is the same. First, we'll check if the loop is currently on the same position as the smallest/largest element. If this is true, then we skip this iteration. Otherwise, we'll get the product between the smallest/largest value and the current value. If the product found is larger than what was previously found, then we'll save this product as the largest product. After both iterations are complete, we'll return the largest product found. This gives a time complexity of O(N), since we iterate through both arrays twice, and they are not nested.
+
+In total the time complexity comes out to the speed O(N) that we're aiming for.
+
+**5. You're creating software that analyzes the data of body temperature readings taken from hundreds of human patients. These readings are taken from healthy people and range from 97 degrees Fahrenheit to 99 degrees Fahrenheit. An important point: within this application, the decimal point NEVER goes beyond the tenths place. Here's a sample array of temperature readings:**
+```
+[98.6, 98.0, 97.1, 99.0, 98.9, 97.8, 98.5, 98.2, 98.0, 97.1]
+```
+**You are to write a function that sorts these readings from lowest to highest. Using a classic sorting algorithm such as Quicksort would take O(NlogN). However, in this case, writing a faster sorting algorithm is possible. Yes, that's right. Evne though you've learned that the fastest sorts are O(NlogN), this case is different. Why? In this case, there are limited possibilities for the readings. In such a case, we can sort these values in O(N). It may be N multiplied by a constant, but that's still considered O(N).**
+
+Before we go over how we can get the O(N) time complexity for sorting this data, there are a few key details we must cover that allow for this:
+1. Our values are bounded by [97, 99]. If we DO NOT have this bound, we CANNOT sort in O(N) time, and can sort in O(NlogN) time at the fastest.
+2. All values DO NOT go beyond the tenths place. If this is false, then we CANNOT sort in O(N) time, and must resort to O(NlogN) sorting.
+
+Now that that's cleared up, let's go over how we can achieve a O(N) time complexity for sorting this dataset.
+
+Since we are given that the bounds are [97, 99] and only going up to the tenths place, that means there are only 21 possible values this array could contain. We'll start by creating three variables: an int variable that represents the minimum bound (97), an int variable that represents the max (99), and a bool variable that we can call 'flag', which will track whether the criteria for the O(N) time complexity is not possible. Let's loop through all elements in the array to ensure these bounds and rules are met.
+
+When we loop through the array to verify our data is valid, we'll first create an int that stores the current value from the array multiplied by 10 and floored, and compare it to the current value only multiplied by 10. This preserves the value from the tenths place while checking that there are no more decimal places after that. If these two value ARE NOT equal, or the current value is outside the bounds of [97, 99], we'll set our bool to true and break out of the loop since we can no longer sort in O(N) time. If this break statement is never reached, then our dataset is healthy for O(N) sorting. This step will take up to N steps (possibly less since we could break out of the loop early), giving a time complexity of O(N). If our dataset is healthy for the O(N) sorting, then we'd take N steps to verify, but this still gives a time complexity of O(N).
+
+After looping, we'll check if our flag variable was set to true. If this is the case, then we CANNOT sortin O(N) time, and must resort to O(NlogN) sorting. For this fallback, I've chosen to go with C++'s sort algorithm, which gives a time complexity of O(NlogN). We'll then return the sorted array.
+
+If our flag variable is false, then we can process with O(N) sorting. We'll create an array that stores 21 ints, which will keep track of the 21 possible values our array can contain, and an empty array that will store our sorted data. To get the counts for each of the 21 variables, we'll have to loop through the array again, and the index for where to store the count for said variable will be determined as follows:
+- Multiply the value by 10
+- Get the remaineder when this value is divded by 97 (our min).
+The remainder will be the index of the given variable, which is where we'll keep count of that variable. This is comparable to a bucket sort, but specialized for this purpose. We loop through the given array once, giving a time complexity of O(N).
+
+Now, we can finally sort the array, and we'll iterate through every index in the array that contains the count of the 21 possible numbers. We'll have an outer loop that loops through each index of the array that keeps count of each variable, and an inner loop that adds those values to the array. Values will be reconstructed as follows:
+- The original value to insert in the array will be assumed to be 97.
+- From the outer loop iterator int value, we'll divide this value by 10, giving the additional value that this part of the array that keeps the counts for each variable represents (ex: when i = 0, this is represents 97; when i = 13, this represents 98.3; etc.). We'll then insert this value into the array.
+The total step count for this step is N + 21, giving a time complexity of O(N). The step count IS NOT 21*N because even though we have nested loops, the nested loop's total amount of iterations adds up to N, and we are checking across 21 buckets. That means there are 21 checks and N steps happen across all buckets, giving N + 21 steps.
+
+In total, we'd get a time complexity of O(N).
+
+**6. You're writing a function that acceps an array of unsorted integers and returns the length of the longest consecutive sequence among them. The sequence is formed by integers that increase by 1. For example, in the array:**
+```
+[10, 5, 12, 3, 55, 30, 4, 11, 2]
+```
+**the longest consecutive sequence is 2-3-4-5. These four integers form an increasing sequence because each integer is one greater than the previous one. While there's also a sequence of 10-11-12, it's only a sequence of three integers. In this case, the function should return 4, since that's the length of the longest consecutive sequence that can be formed from this array. One more example:**
+```
+[19, 13, 15, 12, 18, 14, 17, 11]
+```
+**this array's longest sequence is 11-12-13-14-15, so the function would return 5. Your job is to optimize the function so that it takes O(N) time.**
+
+For this function to achieve a time complexity of O(N), we'll want to keep track of what numbers are present in the current array, as well as the current streak and longest streak of consecutive integers.
+
+Firstly, we'll create an unordered set for tracking what integers are present in the array. This will take N steps, giving a time complexity of O(N).
+
+Next, we'll create an int variable that tracks the longest streak, initializing it to 1.
+
+Next, we'll iterate through every present integer in the unordered set. In order to identify our sequence, we'll check to see if the previous number is present. If the previous number is present, then that means we aren't at the beginning of the possible sequence. If the previous number is NOT present, then that means we've found the beginning of a possible sequence. We'll keep track of the current number, and create an int variable that tracks the current streak, initializing it to 1. We'll use a while-loop to determine if the next number is present in the sequence. If the next number is present, we'll increment both the current number and the current streak count. Once the streak is broken, we'll assign the longest streak variable the larger of the two values: the current longest streak, and the streak just found. After iterating through all numbers found in the array, we'll return the longest streak. In total each number gets checked AT MOST 2 times, meaning there would be 2N steps, giving a time complexity of O(N).
+
+In total, this method gives a time complexity of O(N).
