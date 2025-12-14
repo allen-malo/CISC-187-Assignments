@@ -29,6 +29,7 @@ Next, we'll create an array for storing the player names present in both sports.
 
 In total, this gives us a time complexity of O(N + M), where N is the array size for sport 1, and M is the array size for sport 2.
 
+
 **2. You're writing a function that accepts an array of distinct integers from 0, 1, 2, 3,... up to N. However, the array will be missing one integer, and your function is to return the missing one. For example, this array has all the integers from 0 to 6, but is missing the 4:**
 ```
 [2, 3, 0, 6, 1, 5]
@@ -45,6 +46,7 @@ For this algorithm, if the array is empty, we'll return -1. Othwerwise, we can u
 Once we get the highest integer in the array, we'll use that to know that we need every integer from 0-N. Since the integers from the array are now keys in the set, we'll loop through every integer from 0-N. IF a key DOES NOT exist for an integer between 0 and N, then that means we've found the missing number, so we can return that number to end the function. In total this step gives a time complexity of O(N), since we loop through each integer up to N once. If there are no missing integers, we'll return -1.
 
 In total, this gives a time complexity of O(N).
+
 
 **3. You're working on some more stock-prediction software. The function you're writing accepts an array of predicted prices for a particular stock over the course of time. For example this array of seven prices:**
 ```
@@ -64,6 +66,7 @@ If there are more than 2 elements, then we'll use a for-loop to loop through the
 
 After iterating through the array is complete, we return the max profit found. The total time complexity would be O(N).
 
+
 **4. You're writing a function that accepts an array of numbers and computes the highest product of any two numbers in the array. At first glance, this is easy, as we can just find the two greatest numbers and multiply them. However, our array can contain negative numbers and look like this:**
 ```
 [5, -10, -6, 9, 4]
@@ -79,6 +82,7 @@ After, we'll create an int variable that stores the largest product found, initi
 The process for both iterations is the same. First, we'll check if the loop is currently on the same position as the smallest/largest element. If this is true, then we skip this iteration. Otherwise, we'll get the product between the smallest/largest value and the current value. If the product found is larger than what was previously found, then we'll save this product as the largest product. After both iterations are complete, we'll return the largest product found. This gives a time complexity of O(N), since we iterate through both arrays twice, and they are not nested.
 
 In total the time complexity comes out to the speed O(N) that we're aiming for.
+
 
 **5. You're creating software that analyzes the data of body temperature readings taken from hundreds of human patients. These readings are taken from healthy people and range from 97 degrees Fahrenheit to 99 degrees Fahrenheit. An important point: within this application, the decimal point NEVER goes beyond the tenths place. Here's a sample array of temperature readings:**
 ```
@@ -109,6 +113,7 @@ Now, we can finally sort the array, and we'll iterate through every index in the
 The total step count for this step is N + 21, giving a time complexity of O(N). The step count IS NOT 21*N because even though we have nested loops, the nested loop's total amount of iterations adds up to N, and we are checking across 21 buckets. That means there are 21 checks and N steps happen across all buckets, giving N + 21 steps.
 
 In total, we'd get a time complexity of O(N).
+
 
 **6. You're writing a function that acceps an array of unsorted integers and returns the length of the longest consecutive sequence among them. The sequence is formed by integers that increase by 1. For example, in the array:**
 ```
