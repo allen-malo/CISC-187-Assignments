@@ -62,9 +62,9 @@ There is an alternate way that can also give the same result. Instead of using a
 ```
 [10, 7, 5, 8, 11, 2, 6]
 ```
-**predicts that a given stock will have these prices over the next seven days. (On Day 1, the stock will close at $10; on Day 2, the stock will close at $7, and so on.) Your function should calculate the greatest profit that could be made from a single "buy" transaction followed by a single "sell" transaction. In the previous example, the most money could be made if we bought the stock when it was worth $5 and sold it when it was worth $11. This yields a profit of $6 per share. Note that we could make even more money if we buy and sell multiple times, but for now, this function focuses on the most profit that could be made from just one purchase followed by one sale. Now, we could use nested loops to find the profit of every possible buy and sell combination. However, this would be O(N<sup>2</sup>) and too slow for our hotshot trading platform.
+**predicts that a given stock will have these prices over the next seven days. (On Day 1, the stock will close at $10; on Day 2, the stock will close at $7, and so on.) Your function should calculate the greatest profit that could be made from a single "buy" transaction followed by a single "sell" transaction. In the previous example, the most money could be made if we bought the stock when it was worth $5 and sold it when it was worth $11. This yields a profit of $6 per share. Note that we could make even more money if we buy and sell multiple times, but for now, this function focuses on the most profit that could be made from just one purchase followed by one sale. Now, we could use nested loops to find the profit of every possible buy and sell combination. However, this would be O(N<sup>2</sup>) and too slow for our hotshot trading platform.**
 
-Your job is to optimize the code so that the function clocks in at just O(N)**
+**Your job is to optimize the code so that the function clocks in at just O(N)**
 
 Since this algorithm must have a time complexity of O(N), we'll want to keep track of the best day to buy, and the best day to sell. First, we'll check if the array is empty. If the array is empty, then we'll return 0. We'll also check if the array contains only one element. If this is true, then we'll return 0.
 
