@@ -1,4 +1,6 @@
 
+[Video Link](https://youtu.be/KhtpNvHAvSI)
+
 **1. You're working on software that analyzes sports players. Following are two arrays of players of different sports:**
 ```
 basketball_players = [
