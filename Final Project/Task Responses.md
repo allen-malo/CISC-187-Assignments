@@ -52,11 +52,11 @@ At first glance, ```arr2``` might look "complete" by definition in comparison to
 
 For this algorithm, if the array is empty, we'll return -1. Othwerwise, we can use an unordered set to save the integers from the array as keys. We'll also save the highest number in the array, since this is N. Doing this would take N steps, giving a time complexity of O(N).
 
-Once we get the highest integer in the array, we'll use that to know that we need every integer from 0-N. Since the integers from the array are now keys in the set, we'll loop through every integer from 0-N. IF a key DOES NOT exist for an integer between 0 and N, then that means we've found the missing number, so we can return that number to end the function. In total this step gives a time complexity of O(N), since we loop through each integer up to N once. If there are no missing integers, we'll return -1.
+Once we get the highest integer in the array, we'll use that to know that we need every integer from 0-N. Since the integers from the array are now keys in the set, we'll loop through every integer from 0-N. IF a key DOES NOT exist for an integer between 0 and N, then that means we've found the missing number, so we can return that number to end the function. In total this step gives a time complexity of O(N), since we loop through each integer up to N once. If there are no missing integers between 0 and the max value found, we'll return the max value + 1, since this has to be the missing number.
 
 In total, this gives a time complexity of O(N).
 
-There is an alternate way that can also give the same result. Instead of using an unordered set, we can get the expected sum of the numbers from 0-N, and compare it to the actual sum
+There is an alternate way that can also give the same result. Instead of using an unordered set, we can get the expected sum of the numbers from 0-N (N is the array size), and compare it to the actual sum of numbers from the given array. The difference between the expected sum and actual sum is the missing number.
 
 **3. You're working on some more stock-prediction software. The function you're writing accepts an array of predicted prices for a particular stock over the course of time. For example this array of seven prices:**
 ```
