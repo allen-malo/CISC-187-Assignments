@@ -41,12 +41,22 @@ In total, this gives us a time complexity of O(N + M), where N is the array size
 **In this case, the function should return 1.
 Using a nested-loops approach would take up to O(N<sup>2</sup>). Your job is to optimize the code so that it has a runtime of O(N).**
 
+Before we dive into this problem, there is a condition that we must make clear: there is ALWAYS a missing number! This means that no array is EVER considered "complete".
+
+For example, let's compare the following arrays:
+```
+arr1 = [1, 2, 3, 4];
+arr2 = [0, 1, 2, 3, 4];
+```
+At first glance, ```arr2``` might look "complete" by definition in comparison to ```arr1```. However, the Task states that there is ALWAYS a missing number, and does not include to check for the validity of something being missing. As a result, this function should return 0 for ```arr1``` and 5 for ```arr2```.
+
 For this algorithm, if the array is empty, we'll return -1. Othwerwise, we can use an unordered set to save the integers from the array as keys. We'll also save the highest number in the array, since this is N. Doing this would take N steps, giving a time complexity of O(N).
 
 Once we get the highest integer in the array, we'll use that to know that we need every integer from 0-N. Since the integers from the array are now keys in the set, we'll loop through every integer from 0-N. IF a key DOES NOT exist for an integer between 0 and N, then that means we've found the missing number, so we can return that number to end the function. In total this step gives a time complexity of O(N), since we loop through each integer up to N once. If there are no missing integers, we'll return -1.
 
 In total, this gives a time complexity of O(N).
 
+There is an alternate way that can also give the same result. Instead of using an unordered set, we can get the expected sum of the numbers from 0-N, and compare it to the actual sum
 
 **3. You're working on some more stock-prediction software. The function you're writing accepts an array of predicted prices for a particular stock over the course of time. For example this array of seven prices:**
 ```
